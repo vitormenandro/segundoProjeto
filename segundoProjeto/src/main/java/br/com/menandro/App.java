@@ -25,7 +25,7 @@ public class App {
 		try (SpeechClient speechClient = SpeechClient.create()) {
 
 			// The path to the audio file to transcribe
-			String fileName = "./resources/txt.raw";
+			String fileName = "/Users/VitorBarboza/git/segundoProjeto/segundoProjeto/resources/audioteste.mp3";
 
 			// Reads the audio file into memory
 			Path path = Paths.get(fileName);
@@ -34,7 +34,7 @@ public class App {
 
 			// Builds the sync recognize request
 			RecognitionConfig config = RecognitionConfig.newBuilder().setEncoding(AudioEncoding.LINEAR16)
-					.setSampleRateHertz(16000).setLanguageCode("en-US").build();
+					.setSampleRateHertz(16000).setLanguageCode("pt-BR").build();
 			RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(audioBytes).build();
 
 			// Performs speech recognition on the audio file
